@@ -74,7 +74,7 @@ public class UserManager {
                 .subscribe(new Action1<JsonDataResponse<User>>() {
                     @Override
                     public void call(JsonDataResponse<User> userJsonDataResponse) {
-                        if (userJsonDataResponse.getRc() == Constants.Companion.getRESULT_OK()) {
+                        if (userJsonDataResponse.getRc() == Constants.RESULT_OK) {
                             User user = userJsonDataResponse.getData();
                             if (user == null || user.getId() <= 0 || TextUtils.isEmpty(user.getEncryptedToken())) {
                                 Toast.makeText(context, context.getString(R.string.login_failure),
@@ -114,7 +114,7 @@ public class UserManager {
                 .subscribe(new Action1<JsonDataResponse<User>>() {
                     @Override
                     public void call(JsonDataResponse<User> userJsonDataResponse) {
-                        if (userJsonDataResponse.getRc() == Constants.Companion.getRESULT_OK()) {
+                        if (userJsonDataResponse.getRc() == Constants.RESULT_OK) {
                             User user = userJsonDataResponse.getData();
                             if (user == null || user.getId() <= 0 || TextUtils.isEmpty(user.getEncryptedToken())) {
                                 Toast.makeText(context, context.getString(R.string.signup_failure),

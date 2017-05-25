@@ -53,7 +53,7 @@ public class UpgradeManager {
             .flatMap(new Func1<JsonDataResponse<VersionUpgrade>, Observable<VersionUpgrade>>() {
               @Override
               public Observable<VersionUpgrade> call(JsonDataResponse<VersionUpgrade> response) {
-                if (response.getRc() == Constants.Companion.getRESULT_OK()) {
+                if (response.getRc() == Constants.RESULT_OK) {
                   userPrefs.setVersionUpgrade(response.getData());
                   return Observable.just(response.getData());
                 }

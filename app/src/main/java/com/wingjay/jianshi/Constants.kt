@@ -5,8 +5,8 @@ package com.wingjay.jianshi
  */
 class Constants {
     companion object {
-        val REQUEST_CODE_VIEW_DIARY_FROM_LIST = 100
-        val REQUEST_CODE_BG_COLOR_CHANGE = 200
-        val RESULT_OK = 100
+        const val REQUEST_CODE_VIEW_DIARY_FROM_LIST = 100
+        const val REQUEST_CODE_BG_COLOR_CHANGE = 200
+        const val RESULT_OK = 0
     }
 }

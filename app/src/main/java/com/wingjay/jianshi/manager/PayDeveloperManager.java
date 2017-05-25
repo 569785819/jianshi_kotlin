@@ -57,7 +57,7 @@ public class PayDeveloperManager {
                         .flatMap(new Func1<JsonDataResponse<PayDeveloperDialogData>, Observable<PayDeveloperDialogData>>() {
                             @Override
                             public Observable<PayDeveloperDialogData> call(JsonDataResponse<PayDeveloperDialogData> response) {
-                                if (response.getRc() == Constants.Companion.getRESULT_OK()) {
+                                if (response.getRc() == Constants.RESULT_OK) {
                                     return Observable.just(response.getData());
                                 } else {
                                     return Observable.just(null);

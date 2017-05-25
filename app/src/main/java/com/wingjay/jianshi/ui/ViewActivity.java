@@ -124,7 +124,7 @@ public class ViewActivity extends BaseActivity {
             ShareContent shareContent = new ShareContent();
             try {
               JsonDataResponse<ShareContent> response = userService.getShareContent().toBlocking().first();
-              if (response.getRc() == Constants.Companion.getRESULT_OK() && response.getData() != null) {
+              if (response.getRc() == Constants.RESULT_OK && response.getData() != null) {
                 shareContent = response.getData();
               }
             } catch (Exception e) {

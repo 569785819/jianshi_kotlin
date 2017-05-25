@@ -21,6 +21,7 @@ apply plugin: 'io.fabric'
 apply plugin: AspectjPlugin
 
 apply plugin: 'kotlin-android'
+apply plugin: 'realm-android'
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }

@@ -255,7 +255,7 @@ public class MainActivity extends BaseActivity {
                 .filter(new Func1<JsonDataResponse<ImagePoem>, Boolean>() {
                     @Override
                     public Boolean call(JsonDataResponse<ImagePoem> response) {
-                        return (response.getRc() == Constants.Companion.getRESULT_OK())
+                        return (response.getRc() == Constants.RESULT_OK)
                                 && (response.getData() != null);
                     }
                 })
@@ -302,13 +302,13 @@ public class MainActivity extends BaseActivity {
     void toSettingsPage(View v) {
         Intent intent = new Intent(MainActivity.this, SettingActivity.class);
         ActivityTransControl.setTransView(settingView);
-        startActivityForResult(intent, Constants.Companion.getREQUEST_CODE_BG_COLOR_CHANGE());
+        startActivityForResult(intent, Constants.REQUEST_CODE_BG_COLOR_CHANGE);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == Constants.Companion.getREQUEST_CODE_BG_COLOR_CHANGE()) {
+        if (requestCode == Constants.REQUEST_CODE_BG_COLOR_CHANGE) {
             if (resultCode == RESULT_OK) {
                 setContainerBgColorFromPrefs();
             }

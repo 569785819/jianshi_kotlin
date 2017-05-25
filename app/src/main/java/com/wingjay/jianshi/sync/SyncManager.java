@@ -74,7 +74,7 @@ public class SyncManager {
     userService.sync(syncData).subscribe(new Action1<JsonDataResponse<SyncModel>>() {
       @Override
       public void call(JsonDataResponse<SyncModel> response) {
-        if (response.getRc() == Constants.Companion.getRESULT_OK()) {
+        if (response.getRc() == Constants.RESULT_OK) {
           SyncModel syncModel = response.getData();
           userPrefs.setSyncToken(syncModel.getSyncToken());
           if (syncModel.getUpsert() != null) {
@@ -136,7 +136,7 @@ public class SyncManager {
     userService.syncLog(syncLog).subscribe(new Action1<JsonDataResponse<JsonObject>>() {
       @Override
       public void call(JsonDataResponse<JsonObject> jsonObjectJsonDataResponse) {
-        if (jsonObjectJsonDataResponse.getRc() == Constants.Companion.getRESULT_OK()) {
+        if (jsonObjectJsonDataResponse.getRc() == Constants.RESULT_OK) {
           JsonObject object = jsonObjectJsonDataResponse.getData();
           int syncedCount = object.get("synced_count").getAsInt();
           Timber.i("synced log count %d", syncedCount);
